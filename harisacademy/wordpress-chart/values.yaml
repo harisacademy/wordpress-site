@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: docker.io/harikishan468/wordpress-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  hosts:
+    - host: localhost
+      paths:
+        - path: /
+          pathType: Prefix
+
+wordpress:
+  username: admin
+  password: pa55w0rd
+  email: kubernetes468@gmail.com
