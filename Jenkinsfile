@@ -11,8 +11,8 @@ pipeline {
         stage('Build') {
             steps {
                 // Checkout source code from Git repository
-                git 'https://github.com/harisacademy/wordpress-site.git'
-                
+                //git 'https://github.com/harisacademy/wordpress-site.git'
+                checkout scm: [$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/harisacademy/wordpress-site.git']]]
                 // Build Docker image
                 script {
                     docker.build(DOCKER_IMAGE)
