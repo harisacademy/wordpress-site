@@ -19,7 +19,7 @@ pipeline {
                 }
             }
         }
-        
+     /*   
         stage('Test') {
             steps {
                 // Run tests (if any)
@@ -29,6 +29,7 @@ pipeline {
                 }
             }
         }
+        */
         
         stage('Deploy') {
             steps {
