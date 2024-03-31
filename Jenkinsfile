@@ -15,8 +15,7 @@ pipeline {
                 checkout scm: [$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/harisacademy/wordpress-site.git']]]
                 // Build Docker image
                 script {
-                    sh 'sudo apt update && sudo apt install docker.io'
-                    sh 'sudo systemctl start docker && sudo systemctl enable docker'
+                    sh 'docker--version'
                     sh 'docker build -t harikishan468/wordpress-app .'
                 }
             }
